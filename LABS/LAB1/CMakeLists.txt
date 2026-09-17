@@ -4,4 +4,5 @@ project(LAB1 C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(LAB1
-        L1_insertion_sort.c)
+        L1_insertion_sort.c
+)

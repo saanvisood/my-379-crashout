@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 10
+#define N 100000
 
 int arr[N];
 
@@ -31,12 +31,12 @@ int main(void) {
     for (int i = 0; i < N; i++) {
         arr[i] = rand() >> 10;
     }
-    printf("Lab 1 - C insertion sort\n");
-    printf("List before sorting: ");
-    printArray(arr, N);
+    // printf("Lab 1 - C insertion sort\n");
+    // printf("List before sorting: ");
+    // printArray(arr, N);
     insertionSort(arr, N);
-    printf("List after sorting: ");
-    printArray(arr, N);
+    // printf("List after sorting: ");
+    // printArray(arr, N);
 
     return 0;
 }

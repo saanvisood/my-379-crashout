@@ -71,16 +71,17 @@ def print_array(A):
 
 
 def longest_repeat(a_list, length):
-	longest = 0
+	if n == 0:
+		return 0
+	longest = 1
 	current = 1
-	for i in range(0, length - 1):
+	for i in range(length - 1):
 		if a_list[i] == a_list[i + 1]:
 			current += 1
-		else:
 			longest = max(longest, current)
+		else:
 			current = 1
 
-	longest = max(longest, current)
 	return longest
 
 
