@@ -1,8 +1,5 @@
-import random
-import time
-
-N = 10
-arr = [0] * N
+arr = [5, 1, 7, 9, 3, 1, 3, 9, 9, 7, 3]
+n = len(arr)
 
 def merge(A, p, q, r):
 	"""Merge two sorted sublists/subarrays to a larger sorted sublist/subarray.
@@ -69,18 +66,27 @@ def merge_sort(A, p=0, r=None):
 def print_array(A):
 	print("Lab 1 - merge sort")
 	print(f'List before sorting: {A}')
-	merge_sort(A, 0, N - 1)
+	merge_sort(A, 0, n - 1)
 	print(f'List after sorting: {A}')
 
 
-def main():
-	for i in range(N):
-		arr[i] = random.randint(0, 100 * N - 1)
+def longest_repeat(a_list, length):
+	longest = 0
+	current = 1
+	for i in range(0, length - 1):
+		if a_list[i] == a_list[i + 1]:
+			current += 1
+		else:
+			longest = max(longest, current)
+			current = 1
 
-	t0 = time.time()
-	merge_sort(arr)
-	t1 = time.time()
-	print(f"Time taken: {t1 - t0:.2f}s")
+	longest = max(longest, current)
+	return longest
+
+
+def main():
+	print_array(arr)
+	print(longest_repeat(arr, n))
 
 
 main()

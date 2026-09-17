@@ -1,4 +1,5 @@
 import random
+import time
 
 N = 10
 arr = [0] * N
@@ -27,17 +28,21 @@ def insertion_sort(A, n):
 		A[j + 1] = key
 
 
-def main():
-	for i in range(N):
-		arr[i] = random.randint(0, 100 * N - 1)
-	print_array(arr)
-
-
 def print_array(A):
 	print("Lab 1 - insertion sort")
 	print(f'List before sorting: {A}')
 	insertion_sort(A, N)
 	print(f'List after sorting: {A}')
+
+
+def main():
+	for i in range(N):
+		arr[i] = random.randint(0, 100 * N - 1)
+
+	t0 = time.time()
+	insertion_sort(arr, N)
+	t1 = time.time()
+	print(f"Time taken: {t1 - t0:.2f}s")
 
 
 main()
